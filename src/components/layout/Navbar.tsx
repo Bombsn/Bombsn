@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import Logo from "@/components/ui/logo";
 
 interface NavbarProps {
   logo?: string;
@@ -50,14 +51,15 @@ const Navbar = ({
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#"
-          className={cn(
-            "text-2xl font-bold",
-            theme === "dark" ? "text-red-400" : "text-red-600",
-          )}
-        >
-          {logo}
+        <a href="#" className="flex items-center gap-2">
+          <span
+            className={cn(
+              "text-2xl font-bold",
+              theme === "dark" ? "text-red-400" : "text-red-600",
+            )}
+          >
+            {logo}
+          </span>
         </a>
 
         {/* Desktop Navigation */}
@@ -96,7 +98,6 @@ const Navbar = ({
         <div className="md:hidden flex items-center space-x-2">
           <LanguageSwitcher />
           <ThemeToggle />
-
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="h-10 w-10">

@@ -1,10 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { cn } from "@/lib/utils";
+import Logo from "@/components/ui/logo";
+
+interface SparkleProps {
+  color: string;
+  size: number;
+  style: React.CSSProperties;
+  moveX?: number;
+  moveY?: number;
+}
+
+const Sparkle = ({
+  color,
+  size,
+  style,
+  moveX = 0,
+  moveY = 0,
+}: SparkleProps) => {
+  return (
+    <motion.div
+      className="absolute rounded-full z-0"
+      style={{
+        ...style,
+        width: size,
+        height: size,
+        backgroundColor: color,
+      }}
+      animate={{
+        opacity: [0, 0.9, 0],
+        scale: [0, 1, 0],
+        x: moveX ? [0, moveX, 0] : undefined,
+        y: moveY ? [0, moveY, 0] : undefined,
+      }}
+      transition={{
+        duration: Math.random() * 2 + 1.5,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
+      }}
+    />
+  );
+};
 
 interface HeroSectionProps {
   title?: string;
@@ -19,62 +60,194 @@ const HeroSection = ({
 }: HeroSectionProps) => {
   const { t } = useLanguage();
   const { theme } = useTheme();
+  const [sparkles, setSparkles] = useState<React.ReactNode[]>([]);
+
+  useEffect(() => {
+    const generateSparkles = () => {
+      const newSparkles = [];
+      const count = 120; // Increased dot count
+
+      for (let i = 0; i < count; i++) {
+        // Enhanced colors with stronger opacity
+        const redColor =
+          theme === "dark"
+            ? `rgba(239, 68, 68, ${Math.random() * 0.6 + 0.4})` // Stronger red in dark mode
+            : `rgba(239, 68, 68, ${Math.random() * 0.4 + 0.2})`; // Stronger red in light mode
+        const tealColor =
+          theme === "dark"
+            ? `rgba(45, 212, 191, ${Math.random() * 0.6 + 0.4})` // Stronger teal in dark mode
+            : `rgba(20, 184, 166, ${Math.random() * 0.4 + 0.2})`; // Stronger teal in light mode
+
+        // Add some white/bright dots for extra contrast
+        const whiteColor =
+          theme === "dark"
+            ? `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.3})`
+            : `rgba(255, 255, 255, ${Math.random() * 0.7 + 0.3})`;
+
+        // Add some yellow/gold dots for variety
+        const goldColor =
+          theme === "dark"
+            ? `rgba(250, 204, 21, ${Math.random() * 0.5 + 0.3})`
+            : `rgba(234, 179, 8, ${Math.random() * 0.4 + 0.2})`;
+
+        // More color variety
+        const colorRandom = Math.random();
+        let color;
+        if (colorRandom < 0.4) {
+          color = redColor;
+        } else if (colorRandom < 0.7) {
+          color = tealColor;
+        } else if (colorRandom < 0.9) {
+          color = whiteColor;
+        } else {
+          color = goldColor;
+        }
+
+        // More size variety
+        const size = Math.random() * 12 + 2;
+        const delay = Math.random() * 5;
+
+        // Random movement values
+        const moveX = (Math.random() - 0.5) * 30; // -15px to +15px movement
+        const moveY = (Math.random() - 0.5) * 30; // -15px to +15px movement
+
+        const style = {
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animationDelay: `${delay}s`,
+          filter: Math.random() > 0.8 ? "blur(1px)" : "none", // Some dots are slightly blurred
+        };
+
+        newSparkles.push(
+          <Sparkle
+            key={i}
+            color={color}
+            size={size}
+            style={style}
+            moveX={moveX}
+            moveY={moveY}
+          />,
+        );
+      }
+
+      setSparkles(newSparkles);
+    };
+
+    generateSparkles();
+    const interval = setInterval(generateSparkles, 8000); // Slightly faster regeneration
+
+    return () => clearInterval(interval);
+  }, [theme]);
 
   return (
     <section
       className={cn(
-        "relative w-full h-[700px] flex items-center justify-center overflow-hidden",
+        "relative w-full h-screen flex items-center justify-center overflow-hidden",
         theme === "dark" ? "bg-gray-900" : "bg-white",
       )}
     >
-      {/* Background gradient */}
+      {/* Sparkling dots */}
+      {sparkles}
+
+      {/* Background gradient with stronger contrast */}
       <div
         className={cn(
           "absolute inset-0 z-0",
           theme === "dark"
-            ? "bg-gradient-to-b from-red-950 to-gray-900"
-            : "bg-gradient-to-b from-red-50 to-white",
+            ? "bg-gradient-to-b from-red-900/60 via-gray-900 to-gray-950"
+            : "bg-gradient-to-b from-red-100/90 via-white to-white",
         )}
       ></div>
 
-      {/* Animated circles for visual interest */}
+      {/* Animated orbs */}
       <motion.div
         className={cn(
-          "absolute top-20 right-20 w-64 h-64 rounded-full opacity-30 z-0",
-          theme === "dark" ? "bg-red-800" : "bg-red-100",
+          "absolute top-1/4 right-1/4 w-64 h-64 rounded-full blur-3xl z-0",
+          theme === "dark" ? "bg-red-600" : "bg-red-300", // Stronger red in light mode
         )}
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{
           scale: [0.8, 1.2, 0.8],
-          opacity: [0.3, 0.5, 0.3],
+          opacity: [0.3, 0.5, 0.3], // Increased opacity for stronger contrast
+          x: [0, 60, 0], // More movement
+          y: [0, -40, 0], // More movement
         }}
         transition={{
-          duration: 8,
+          duration: 15,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
+
       <motion.div
         className={cn(
-          "absolute bottom-10 left-20 w-40 h-40 rounded-full opacity-20 z-0",
-          theme === "dark" ? "bg-teal-700" : "bg-teal-200",
+          "absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full blur-3xl z-0",
+          theme === "dark" ? "bg-teal-500" : "bg-teal-300", // Stronger teal
         )}
         initial={{ scale: 1, opacity: 0 }}
         animate={{
           scale: [1, 1.5, 1],
-          opacity: [0.2, 0.4, 0.2],
+          opacity: [0.3, 0.5, 0.3], // Increased opacity
+          x: [0, -70, 0], // More movement
+          y: [0, 50, 0], // More movement
         }}
         transition={{
-          duration: 10,
+          duration: 18,
           repeat: Infinity,
           ease: "easeInOut",
           delay: 1,
         }}
       />
 
+      <motion.div
+        className={cn(
+          "absolute top-2/3 right-1/3 w-40 h-40 rounded-full blur-2xl z-0",
+          theme === "dark" ? "bg-red-400" : "bg-red-200", // Stronger red
+        )}
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{
+          scale: [0.9, 1.3, 0.9],
+          opacity: [0.25, 0.4, 0.25], // Increased opacity
+          x: [0, 40, 0], // More movement
+          y: [0, 50, 0], // More movement
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
+      />
+
+      {/* Additional orb for more visual interest */}
+      <motion.div
+        className={cn(
+          "absolute top-1/3 left-1/3 w-56 h-56 rounded-full blur-3xl z-0",
+          theme === "dark" ? "bg-yellow-500" : "bg-yellow-200", // Gold/yellow orb
+        )}
+        initial={{ scale: 0.7, opacity: 0 }}
+        animate={{
+          scale: [0.7, 1.1, 0.7],
+          opacity: [0.2, 0.35, 0.2],
+          x: [0, 30, 0],
+          y: [0, -40, 0],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 3,
+        }}
+      />
+
       {/* Content container */}
-      <div className="container mx-auto px-4 md:px-6 z-10">
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+      <div className="container relative mx-auto px-4 md:px-6 z-10">
+        <motion.div
+          className="flex flex-col items-center text-center max-w-3xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           {/* Logo */}
           <motion.div
             initial={{ y: -20, opacity: 0 }}
@@ -82,38 +255,19 @@ const HeroSection = ({
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
-            {logoSrc ? (
-              <img
-                src={logoSrc}
-                alt="scriptsCanFly Logo"
-                className="h-20 w-auto"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src =
-                    "https://api.dicebear.com/7.x/initials/svg?seed=SCF&backgroundColor=0369a1&fontSize=36";
-                }}
-              />
-            ) : (
-              <div
-                className={cn(
-                  "h-20 w-20 rounded-full flex items-center justify-center text-white text-2xl font-bold",
-                  theme === "dark" ? "bg-red-500" : "bg-red-600",
-                )}
-              >
-                SCF
-              </div>
-            )}
+            <Logo size="lg" />
           </motion.div>
 
           {/* Title */}
           <motion.h1
             className={cn(
-              "text-4xl md:text-5xl lg:text-6xl font-bold mb-4",
-              theme === "dark" ? "text-red-100" : "text-red-900",
+              "text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight drop-shadow-sm",
+              theme === "dark" ? "text-red-50" : "text-red-900", // Brighter text in dark mode
             )}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ scale: 1.02 }} // Subtle hover effect
           >
             {title}
           </motion.h1>
@@ -121,12 +275,13 @@ const HeroSection = ({
           {/* Tagline */}
           <motion.h2
             className={cn(
-              "text-xl md:text-2xl mb-6",
-              theme === "dark" ? "text-teal-300" : "text-teal-700",
+              "text-xl md:text-2xl lg:text-3xl mb-6 font-medium drop-shadow-sm",
+              theme === "dark" ? "text-teal-200" : "text-teal-700", // Brighter teal in dark mode
             )}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            whileHover={{ scale: 1.02 }} // Subtle hover effect
           >
             {t("tagline")}
           </motion.h2>
@@ -134,7 +289,7 @@ const HeroSection = ({
           {/* Description */}
           <motion.p
             className={cn(
-              "mb-8 max-w-2xl",
+              "mb-8 max-w-2xl text-lg",
               theme === "dark" ? "text-gray-300" : "text-gray-600",
             )}
             initial={{ y: 20, opacity: 0 }}
@@ -155,20 +310,44 @@ const HeroSection = ({
             <Button
               size="lg"
               className={cn(
-                "text-white px-8 py-6 h-auto text-base",
+                "text-white px-8 py-6 h-auto text-lg font-medium rounded-full shadow-xl", // Stronger shadow
                 theme === "dark"
-                  ? "bg-red-500 hover:bg-red-600"
-                  : "bg-red-600 hover:bg-red-700",
+                  ? "bg-red-500 hover:bg-red-600 shadow-red-500/30 border border-red-400/20" // Added subtle border
+                  : "bg-red-600 hover:bg-red-700 shadow-red-500/30 border border-red-500/10", // Added subtle border
               )}
               asChild
             >
-              <a href={ctaLink}>
-                {t("exploreServices")} <ArrowRight className="ml-2 h-5 w-5" />
+              <a href={ctaLink} className="flex items-center gap-2">
+                {t("exploreServices")} <ArrowRight className="h-5 w-5" />
               </a>
             </Button>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 0.5 }}
+      >
+        <motion.div
+          className={cn(
+            "w-6 h-10 rounded-full border-2 flex justify-center",
+            theme === "dark" ? "border-gray-400" : "border-gray-400",
+          )}
+        >
+          <motion.div
+            className={cn(
+              "w-1.5 h-1.5 rounded-full mt-2",
+              theme === "dark" ? "bg-red-400" : "bg-red-500",
+            )}
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </motion.div>
+      </motion.div>
 
       {/* Decorative wave at bottom */}
       <div className="absolute bottom-0 left-0 w-full">

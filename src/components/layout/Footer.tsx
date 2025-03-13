@@ -12,12 +12,13 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import Logo from "@/components/ui/logo";
 
-interface FooterProps {
+type FooterProps = {
   className?: string;
-}
+};
 
-const Footer = ({ className }: FooterProps = {}) => {
+const Footer = ({ className }: FooterProps) => {
   const currentYear = new Date().getFullYear();
   const { t } = useLanguage();
   const { theme } = useTheme();
@@ -34,7 +35,10 @@ const Footer = ({ className }: FooterProps = {}) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">scriptsCanFly</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <Logo size="md" variant="footer" />
+              <h3 className="text-xl font-bold">scriptsCanFly</h3>
+            </div>
             <p className="text-red-100 mb-4">
               Innovative Low-Code/No-Code Lösungen für Schweizer Unternehmen.
             </p>

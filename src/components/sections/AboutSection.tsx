@@ -203,7 +203,7 @@ const AboutSection = ({
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full flex"
                   />
                 </div>
                 <h4

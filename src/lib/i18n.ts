@@ -127,7 +127,7 @@ export const translations: Translations = {
       "Wir sind ein Schweizer Low-Code/No-Code Entwicklungsunternehmen, das sich auf die Erstellung effizienter digitaler Lösungen spezialisiert hat, die Unternehmen bei der Transformation ihrer Geschäftsprozesse unterstützen.",
     ourMission: "Unsere Mission",
     missionText:
-      "Unsere Mission ist es, die Softwareentwicklung zu demokratisieren, indem wir zugängliche Low-Code/No-Code-Lösungen anbieten, die Unternehmen befähigen, schneller und effizienter zu innovieren.",
+      "Unsere Mission ist es, die Softwareentwicklung zu demokratisieren, indem wir zugängliche Low-Code/No-Code-Lösungen anbieten, die Unternehmen befähigen, schneller und effizienter zu werden.",
     ourValues: "Unsere Werte",
     creativity: "Innovation",
     creativityDesc:
