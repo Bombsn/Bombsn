@@ -9,12 +9,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
-interface PortfolioItemProps {
+export interface PortfolioItemProps {
   title: string;
   description: string;
   imageUrl: string;
@@ -22,7 +22,7 @@ interface PortfolioItemProps {
   link?: string;
 }
 
-const PortfolioItem = ({
+export const PortfolioItem = ({
   title = "Project Title",
   description = "A brief description of the project and the scriptwriting work involved.",
   imageUrl = "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80",
@@ -111,71 +111,6 @@ const PortfolioSection = ({}: PortfolioSectionProps) => {
   const { t } = useLanguage();
   const { theme } = useTheme();
 
-  const items = [
-    {
-      title: "Unternehmensportal",
-      description:
-        "Ein internes Mitarbeiterportal für ein Schweizer Finanzunternehmen, das Prozesse automatisiert und die Kommunikation verbessert.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
-      category: "Corporate",
-      link: "#",
-    },
-    {
-      title: "Kundenmanagement-App",
-      description:
-        "Eine Web-App zur Verwaltung von Kundenbeziehungen, die mit FlutterFlow entwickelt wurde und nahtlos mit bestehenden Systemen integriert ist.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80",
-      category: "Screenplay",
-      link: "#",
-    },
-    {
-      title: "Lernplattform",
-      description:
-        "Eine E-Learning-Plattform für eine Schweizer Bildungseinrichtung mit interaktiven Kursen und automatisierter Bewertung.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-      category: "Educational",
-      link: "#",
-    },
-    {
-      title: "E-Commerce-Lösung",
-      description:
-        "Ein Online-Shop für einen lokalen Händler mit Produktkatalog, Zahlungsabwicklung und Bestandsverwaltung.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
-      category: "Marketing",
-      link: "#",
-    },
-    {
-      title: "Inventar-App",
-      description:
-        "Eine mobile Anwendung zur Bestandsverwaltung mit Barcode-Scanning und Echtzeit-Synchronisation.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&q=80",
-      category: "Audio",
-      link: "#",
-    },
-    {
-      title: "Workflow-Automatisierung",
-      description:
-        "Eine Automatisierungslösung für einen Fertigungsbetrieb, die Bestellprozesse optimiert und Fehler reduziert.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
-      category: "Commercial",
-      link: "#",
-    },
-  ];
-
-  const categories = ["All", ...new Set(items.map((item) => item.category))];
-  const [activeCategory, setActiveCategory] = React.useState("All");
-
-  const filteredItems =
-    activeCategory === "All"
-      ? items
-      : items.filter((item) => item.category === activeCategory);
-
   return (
     <section
       id="portfolio"
@@ -210,59 +145,80 @@ const PortfolioSection = ({}: PortfolioSectionProps) => {
           </p>
         </motion.div>
 
-        <Tabs defaultValue="All" className="w-full">
-          <div className="flex justify-center mb-8">
-            <TabsList
-              className={cn(
-                theme === "dark" ? "bg-gray-800" : "",
-                "w-full max-w-xl",
-              )}
-            >
-              {categories.map((category) => (
-                <TabsTrigger
-                  key={category}
-                  value={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={cn(
-                    theme === "dark"
-                      ? "data-[state=active]:bg-gray-700 data-[state=active]:text-white"
-                      : "",
-                  )}
-                >
-                  {t(category.toLowerCase())}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </div>
-
-          {categories.map((category) => (
-            <TabsContent key={category} value={category} className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredItems.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                  >
-                    <PortfolioItem {...item} />
-                  </motion.div>
-                ))}
-              </div>
-            </TabsContent>
-          ))}
-        </Tabs>
-
-        <div className="mt-12 text-center">
-          <Button
+        <div className="flex flex-col items-center justify-center space-y-8 py-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
             className={cn(
-              "group",
-              theme === "dark" ? "bg-red-600 hover:bg-red-700" : "",
+              "max-w-3xl p-8 rounded-xl text-center",
+              theme === "dark" ? "bg-gray-800" : "bg-white shadow-xl",
             )}
           >
-            {t("viewAllProjects")}
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
+            <h3
+              className={cn(
+                "text-2xl md:text-3xl font-bold mb-4",
+                theme === "dark" ? "text-white" : "text-gray-900",
+              )}
+            >
+              {t("exploreOurProjects") || "Explore Our Complete Portfolio"}
+            </h3>
+            <p
+              className={cn(
+                "mb-6 text-lg",
+                theme === "dark" ? "text-gray-300" : "text-gray-600",
+              )}
+            >
+              {t("portfolioCTAText") ||
+                "Discover our full range of projects and see how we've helped businesses transform their digital presence."}
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className={cn(
+                "group text-lg px-8 py-6",
+                theme === "dark" ? "bg-red-600 hover:bg-red-700" : "",
+              )}
+            >
+              <Link to="/projects" className="flex items-center">
+                {t("viewAllProjects") || "View All Projects"}
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl"
+          >
+            {[1, 2, 3].map((_, index) => (
+              <div
+                key={index}
+                className="relative overflow-hidden rounded-lg aspect-video group"
+              >
+                <img
+                  src={`https://images.unsplash.com/photo-${["1542744173-8e7e53415bb0", "1485846234645-a62644f84728", "1503676260728-1c00da094a0b"][index]}?w=600&q=80`}
+                  alt="Project preview"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                  <p className="text-white font-medium">
+                    {
+                      [
+                        "Corporate Portal",
+                        "Customer Management",
+                        "E-Learning Platform",
+                      ][index]
+                    }
+                  </p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
