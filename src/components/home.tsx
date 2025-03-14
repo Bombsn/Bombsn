@@ -10,17 +10,18 @@ import { motion } from "framer-motion";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white w-full">
       {/* Navigation */}
       <Navbar />
 
       {/* Main Content */}
-      <main>
+      <main className="w-full">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
+          className="w-full"
         >
           <HeroSection />
         </motion.div>
@@ -31,6 +32,7 @@ const Home = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="w-full"
         >
           <AboutSection />
         </motion.div>
@@ -41,6 +43,7 @@ const Home = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="w-full"
         >
           <ServicesSection />
         </motion.div>
@@ -51,6 +54,7 @@ const Home = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="w-full"
         >
           <PortfolioSection />
         </motion.div>
@@ -61,6 +65,7 @@ const Home = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="w-full"
         >
           <ContactSection />
         </motion.div>

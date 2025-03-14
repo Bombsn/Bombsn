@@ -116,11 +116,11 @@ const ServicesSection = ({}: ServicesProps) => {
     <section
       id="services"
       className={cn(
-        "py-20 px-4 md:px-8",
+        "py-20 w-full",
         theme === "dark" ? "bg-gray-800" : "bg-gray-50",
       )}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

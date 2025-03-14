@@ -19,8 +19,13 @@ export const LanguageProvider = ({
   const [language, setLanguage] = useState<Language>(() => {
     // Check if language is stored in localStorage
     const savedLanguage = localStorage.getItem("language") as Language;
-    // Default to German for the Swiss site
-    return savedLanguage || "de";
+    // Check browser language
+    const browserLang = navigator.language.split("-")[0];
+    // Default to German for the Swiss site, but use browser language if it matches our available languages
+    const defaultLang = ["de", "en", "fr", "it"].includes(browserLang)
+      ? (browserLang as Language)
+      : "de";
+    return savedLanguage || defaultLang;
   });
 
   useEffect(() => {

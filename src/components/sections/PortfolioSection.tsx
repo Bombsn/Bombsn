@@ -179,9 +179,12 @@ const PortfolioSection = ({}: PortfolioSectionProps) => {
   return (
     <section
       id="portfolio"
-      className={cn("py-20", theme === "dark" ? "bg-gray-900" : "bg-gray-50")}
+      className={cn(
+        "py-20 w-full",
+        theme === "dark" ? "bg-gray-900" : "bg-gray-50",
+      )}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 w-full max-w-none">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -209,7 +212,12 @@ const PortfolioSection = ({}: PortfolioSectionProps) => {
 
         <Tabs defaultValue="All" className="w-full">
           <div className="flex justify-center mb-8">
-            <TabsList className={cn(theme === "dark" ? "bg-gray-800" : "")}>
+            <TabsList
+              className={cn(
+                theme === "dark" ? "bg-gray-800" : "",
+                "w-full max-w-xl",
+              )}
+            >
               {categories.map((category) => (
                 <TabsTrigger
                   key={category}

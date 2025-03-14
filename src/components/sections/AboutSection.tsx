@@ -54,11 +54,11 @@ const AboutSection = ({
     <section
       id="about"
       className={cn(
-        "py-20 px-4 md:px-8 lg:px-16",
+        "py-20 w-full",
         theme === "dark" ? "bg-gray-900" : "bg-white",
       )}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16 w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

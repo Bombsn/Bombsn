@@ -152,7 +152,7 @@ const HeroSection = ({
       {/* Background gradient with stronger contrast */}
       <div
         className={cn(
-          "absolute inset-0 z-0",
+          "absolute inset-0 z-0 w-full",
           theme === "dark"
             ? "bg-gradient-to-b from-red-900/60 via-gray-900 to-gray-950"
             : "bg-gradient-to-b from-red-100/90 via-white to-white",
@@ -241,9 +241,9 @@ const HeroSection = ({
       />
 
       {/* Content container */}
-      <div className="container relative mx-auto px-4 md:px-6 z-10">
+      <div className="container relative mx-auto px-4 md:px-6 z-10 w-full max-w-none">
         <motion.div
-          className="flex flex-col items-center text-center max-w-3xl mx-auto"
+          className="flex flex-col items-center text-center w-full mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}

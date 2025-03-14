@@ -25,11 +25,11 @@ const ContactSection = ({}: ContactSectionProps) => {
     <section
       id="contact"
       className={cn(
-        "py-16 px-4 md:px-8",
+        "py-16 w-full",
         theme === "dark" ? "bg-gray-800" : "bg-white",
       )}
     >
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-6xl px-4 md:px-8 w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,4 +1,4 @@
-export type Language = "en" | "de";
+export type Language = "en" | "de" | "fr" | "it";
 
 export type Translations = {
   [key in Language]: {
@@ -207,5 +207,206 @@ export const translations: Translations = {
     // Theme
     darkMode: "Dunkelmodus",
     lightMode: "Hellmodus",
+  },
+  fr: {
+    // Navbar
+    about: "À propos",
+    services: "Services",
+    portfolio: "Portfolio",
+    contact: "Contact",
+    getStarted: "Commencer",
+
+    // Hero Section
+    tagline: "Solutions de développement Low-Code/No-Code",
+    heroDescription:
+      "Nous créons des solutions numériques personnalisées sans programmation complexe. Des applications web aux applications mobiles, nos experts fournissent des solutions de qualité qui répondent aux besoins de votre entreprise.",
+    exploreServices: "Découvrez nos services",
+
+    // About Section
+    aboutTitle: "À propos de scriptsCanFly",
+    aboutDescription:
+      "Nous sommes une entreprise suisse de développement low-code/no-code spécialisée dans la création de solutions numériques efficaces qui aident les entreprises à transformer leurs opérations.",
+    ourMission: "Notre mission",
+    missionText:
+      "Notre mission est de démocratiser le développement de logiciels en fournissant des solutions low-code/no-code accessibles qui permettent aux entreprises d'innover plus rapidement et plus efficacement.",
+    ourValues: "Nos valeurs",
+    creativity: "Innovation",
+    creativityDesc:
+      "Nous abordons chaque projet avec des solutions innovantes et des perspectives d'avenir.",
+    excellence: "Qualité",
+    excellenceDesc:
+      "Nous visons la plus haute qualité dans chaque solution que nous développons.",
+    collaboration: "Partenariat",
+    collaborationDesc:
+      "Nous travaillons en étroite collaboration avec nos clients pour garantir que leur vision devienne réalité.",
+    meetTeam: "Rencontrez notre équipe",
+
+    // Services Section
+    servicesTitle: "Nos services",
+    servicesSubtitle:
+      "Solutions de développement professionnelles adaptées aux besoins de votre entreprise",
+    screenplayWriting: "Développement d'applications web",
+    screenplayDesc:
+      "Applications web personnalisées construites avec des plateformes low-code modernes qui rationalisent vos processus d'entreprise.",
+    technicalWriting: "Développement d'applications mobiles",
+    technicalDesc:
+      "Applications mobiles natives et multiplateformes qui fonctionnent parfaitement sur tous les appareils.",
+    contentCreation: "Développement de sites web",
+    contentDesc:
+      "Sites web réactifs et solutions e-commerce qui mettent en valeur votre marque et génèrent des conversions.",
+    videoScripts: "Solutions d'automatisation",
+    videoDesc:
+      "Outils d'automatisation des flux de travail qui font gagner du temps et réduisent les erreurs dans vos processus d'entreprise.",
+    podcastScripts: "Services d'intégration",
+    podcastDesc:
+      "Intégration transparente entre vos systèmes existants et les nouvelles solutions low-code.",
+    storytelling: "Solutions bureautiques",
+    storytellingDesc:
+      "Améliorations personnalisées de Microsoft Office et des outils de productivité pour une meilleure efficacité.",
+
+    // Portfolio Section
+    portfolioTitle: "Notre portfolio",
+    portfolioSubtitle:
+      "Explorez notre collection diversifiée de projets low-code/no-code dans différents secteurs.",
+    viewProject: "Voir le projet",
+    viewAllProjects: "Voir tous les projets",
+    corporate: "Entreprise",
+    screenplay: "Applications web",
+    educational: "Éducation",
+    marketing: "E-commerce",
+    audio: "Mobile",
+    commercial: "Automatisation",
+    all: "Tous",
+
+    // Contact Section
+    contactTitle: "Contactez-nous",
+    contactSubtitle:
+      "Vous avez un projet en tête ? Nous aimerions vous entendre !",
+    contactInfo: "Informations de contact",
+    address: "Adresse",
+    email: "Email",
+    phone: "Téléphone",
+    followUs: "Suivez-nous",
+    sendMessage: "Envoyez-nous un message",
+    name: "Nom",
+    yourName: "Votre nom",
+    yourEmail: "Votre adresse email",
+    message: "Message",
+    messagePlaceholder: "Parlez-nous de votre projet ou de votre demande",
+    subscribe: "S'abonner",
+    emailPlaceholder: "Votre email",
+    stayUpdated: "Restez informé",
+    newsletterText:
+      "Abonnez-vous à notre newsletter pour les dernières mises à jour et offres.",
+
+    // Footer
+    quickLinks: "Liens rapides",
+    aboutUs: "À propos de nous",
+    contactUs: "Contactez-nous",
+    allRightsReserved: "Tous droits réservés.",
+
+    // Theme
+    darkMode: "Mode sombre",
+    lightMode: "Mode clair",
+  },
+  it: {
+    // Navbar
+    about: "Chi siamo",
+    services: "Servizi",
+    portfolio: "Portfolio",
+    contact: "Contatti",
+    getStarted: "Inizia ora",
+
+    // Hero Section
+    tagline: "Soluzioni di sviluppo Low-Code/No-Code",
+    heroDescription:
+      "Creiamo soluzioni digitali personalizzate senza programmazione complessa. Dalle applicazioni web alle applicazioni mobili, i nostri esperti forniscono soluzioni di qualità che soddisfano le esigenze della tua azienda.",
+    exploreServices: "Esplora i nostri servizi",
+
+    // About Section
+    aboutTitle: "Chi è scriptsCanFly",
+    aboutDescription:
+      "Siamo un'azienda svizzera di sviluppo low-code/no-code specializzata nella creazione di soluzioni digitali efficienti che aiutano le aziende a trasformare le loro operazioni.",
+    ourMission: "La nostra missione",
+    missionText:
+      "La nostra missione è democratizzare lo sviluppo software fornendo soluzioni low-code/no-code accessibili che permettono alle aziende di innovare più velocemente e in modo più efficiente.",
+    ourValues: "I nostri valori",
+    creativity: "Innovazione",
+    creativityDesc:
+      "Affrontiamo ogni progetto con soluzioni innovative e prospettive orientate al futuro.",
+    excellence: "Qualità",
+    excellenceDesc:
+      "Puntiamo alla massima qualità in ogni soluzione che sviluppiamo.",
+    collaboration: "Partnership",
+    collaborationDesc:
+      "Lavoriamo a stretto contatto con i nostri clienti per garantire che la loro visione diventi realtà.",
+    meetTeam: "Incontra il nostro team",
+
+    // Services Section
+    servicesTitle: "I nostri servizi",
+    servicesSubtitle:
+      "Soluzioni di sviluppo professionale su misura per le esigenze della tua azienda",
+    screenplayWriting: "Sviluppo di applicazioni web",
+    screenplayDesc:
+      "Applicazioni web personalizzate costruite con moderne piattaforme low-code che ottimizzano i processi aziendali.",
+    technicalWriting: "Sviluppo di applicazioni mobili",
+    technicalDesc:
+      "Applicazioni mobili native e multipiattaforma che funzionano perfettamente su tutti i dispositivi.",
+    contentCreation: "Sviluppo di siti web",
+    contentDesc:
+      "Siti web responsive e soluzioni e-commerce che valorizzano il tuo marchio e generano conversioni.",
+    videoScripts: "Soluzioni di automazione",
+    videoDesc:
+      "Strumenti di automazione del flusso di lavoro che fanno risparmiare tempo e riducono gli errori nei processi aziendali.",
+    podcastScripts: "Servizi di integrazione",
+    podcastDesc:
+      "Integrazione perfetta tra i sistemi esistenti e le nuove soluzioni low-code.",
+    storytelling: "Soluzioni per ufficio",
+    storytellingDesc:
+      "Miglioramenti personalizzati di Microsoft Office e strumenti di produttività per una maggiore efficienza.",
+
+    // Portfolio Section
+    portfolioTitle: "Il nostro portfolio",
+    portfolioSubtitle:
+      "Esplora la nostra variegata collezione di progetti low-code/no-code in vari settori.",
+    viewProject: "Visualizza progetto",
+    viewAllProjects: "Visualizza tutti i progetti",
+    corporate: "Aziendale",
+    screenplay: "App web",
+    educational: "Educazione",
+    marketing: "E-commerce",
+    audio: "Mobile",
+    commercial: "Automazione",
+    all: "Tutti",
+
+    // Contact Section
+    contactTitle: "Contattaci",
+    contactSubtitle: "Hai un progetto in mente? Ci piacerebbe sentire da te!",
+    contactInfo: "Informazioni di contatto",
+    address: "Indirizzo",
+    email: "Email",
+    phone: "Telefono",
+    followUs: "Seguici",
+    sendMessage: "Inviaci un messaggio",
+    name: "Nome",
+    yourName: "Il tuo nome",
+    yourEmail: "La tua email",
+    message: "Messaggio",
+    messagePlaceholder: "Parlaci del tuo progetto o della tua richiesta",
+    subscribe: "Iscriviti",
+    emailPlaceholder: "La tua email",
+    stayUpdated: "Resta aggiornato",
+    newsletterText:
+      "Iscriviti alla nostra newsletter per gli ultimi aggiornamenti e offerte.",
+
+    // Footer
+    quickLinks: "Link rapidi",
+    aboutUs: "Chi siamo",
+    contactUs: "Contattaci",
+    allRightsReserved: "Tutti i diritti riservati.",
+
+    // Theme
+    darkMode: "Modalità scura",
+    lightMode: "Modalità chiara",
   },
 };
