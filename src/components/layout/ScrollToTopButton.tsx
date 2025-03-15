@@ -1,8 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { ArrowUp } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
+import { cn } from "@/lib/utils";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = React.useState(false);
+  const { theme } = useTheme();
 
   const toggleVisibility = () => {
     if (window.scrollY > 300) {
@@ -27,7 +31,7 @@ const ScrollToTopButton = () => {
   return (
     <motion.button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 p-3 rounded-full bg-red-600 text-white shadow-lg z-50 ${isVisible ? "flex" : "hidden"}`}
+      className={`fixed bottom-6 right-6 p-3 rounded-full ${theme === "dark" ? "bg-red-600" : "bg-red-600"} text-white shadow-lg z-50 ${isVisible ? "flex" : "hidden"}`}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       initial={{ opacity: 0 }}
@@ -35,20 +39,7 @@ const ScrollToTopButton = () => {
       transition={{ duration: 0.2 }}
       aria-label="Scroll to top"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M5 10l7-7m0 0l7 7m-7-7v18"
-        />
-      </svg>
+      <ArrowUp className="h-6 w-6" />
     </motion.button>
   );
 };

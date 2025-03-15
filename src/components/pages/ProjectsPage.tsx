@@ -54,27 +54,27 @@ const ProjectItem = ({
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           />
         </div>
+        <div className="absolute top-2 right-2 z-10">
+          <span
+            className={cn(
+              "text-xs px-2 py-1 rounded-full shadow-md",
+              theme === "dark"
+                ? "bg-red-900 text-red-200"
+                : "bg-teal-100 text-red-800",
+            )}
+          >
+            {t(category.toLowerCase())}
+          </span>
+        </div>
         <CardHeader>
-          <div className="flex justify-between items-start">
-            <CardTitle
-              className={cn(
-                "text-xl font-bold",
-                theme === "dark" ? "text-white" : "",
-              )}
-            >
-              {title}
-            </CardTitle>
-            <span
-              className={cn(
-                "text-xs px-2 py-1 rounded-full",
-                theme === "dark"
-                  ? "bg-red-900 text-red-200"
-                  : "bg-teal-100 text-red-800",
-              )}
-            >
-              {t(category.toLowerCase())}
-            </span>
-          </div>
+          <CardTitle
+            className={cn(
+              "text-xl font-bold",
+              theme === "dark" ? "text-white" : "",
+            )}
+          >
+            {title}
+          </CardTitle>
         </CardHeader>
         <CardContent className="flex-grow">
           <p
@@ -114,57 +114,93 @@ const ProjectsPage = () => {
 
   const items = [
     {
-      title: "Unternehmensportal",
+      title: t("project1Title") || "Integration Buchungssystem",
       description:
-        "Ein internes Mitarbeiterportal für ein Schweizer Finanzunternehmen, das Prozesse automatisiert und die Kommunikation verbessert.",
+        t("project1Desc") ||
+        "Die Schmidlin & Suter Media GmbH hat uns beauftragt bei ihrer neuesten Website ein Buchungssystem zu integrieren. Unser Ziel war vor allem, dass der Endkunde durch die Integration nicht gestört wird und der Fluss der Website stimmt.",
       imageUrl:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
-      category: "Corporate",
+        "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?w=800&q=80",
+      category: "Integration",
+      link: "https://luminous-bloom.ch",
+    },
+    {
+      title: t("project2Title") || "Automatisierung Motivationsschreiben",
+      description:
+        t("project2Desc") ||
+        "Die Pflegejob Suisse Medical verhilft mit ihrem Service Pflegefachkräften zu Jobs. Wir durften den Cloudprozess entwickeln, der aus den Daten des Bewerbers automatisch mit AI ein perfekt geschriebenes Motivationsschreiben erstellt.",
+      imageUrl:
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+      category: "Automation",
+      link: "https://pflegejob-suissemedical.ch",
+    },
+    {
+      title: t("project3Title") || "Interne App Projekte",
+      description:
+        t("project3Desc") ||
+        "Für die TCA Thermoclima AG durften wir eine neue Version ihrer bestehenden Power App entwickeln. Diese musste vor allem responsiv sein, damit das Backoffice und der Verkauf mit der gleichen App arbeiten können.",
+      imageUrl:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      category: "PowerApps",
       link: "#",
     },
     {
-      title: "Kundenmanagement-App",
+      title: t("project4Title") || "Eingabemaske Labor",
       description:
-        "Eine Web-App zur Verwaltung von Kundenbeziehungen, die mit FlutterFlow entwickelt wurde und nahtlos mit bestehenden Systemen integriert ist.",
+        t("project4Desc") ||
+        "Für das Labor bei der Swisspor AG durften wir mehrere Eingabemasken mit Power Apps erstellen. Monatliche Datenmigrationen entfallen, es entstehen weniger Fehler bei der Erfassung und Auswertungen können jederzeit ausgelesen werden.",
       imageUrl:
-        "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80",
-      category: "Screenplay",
+        "https://images.unsplash.com/photo-1581093458791-9d15482442f5?w=800&q=80",
+      category: "PowerApps",
       link: "#",
     },
     {
-      title: "Lernplattform",
+      title: t("project5Title") || "Customizing Website Spitex",
       description:
-        "Eine E-Learning-Plattform für eine Schweizer Bildungseinrichtung mit interaktiven Kursen und automatisierter Bewertung.",
+        t("project5Desc") ||
+        "Für die Schmidlin & Suter Media GmbH durften wir diverse Anpassungen an der neuen Website für pflegezuhause.zuerich übernehmen.",
       imageUrl:
-        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
-      category: "Educational",
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
+      category: "Website",
+      link: "https://pflegezuhause.zuerich",
+    },
+    {
+      title: t("project6Title") || "Automatisierung Anmeldung",
+      description:
+        t("project6Desc") ||
+        "Für die Bergsportschule Grischa durften wir eine Automatisierung integrieren, die Mails von Kursanmeldungen in eine Excel-Datei schreibt bzw. eine neue Datei erstellt, falls es für diesen Kurs noch keine gibt.",
+      imageUrl:
+        "https://images.unsplash.com/photo-1586892477838-2b96e85e0f96?w=800&q=80",
+      category: "Automation",
       link: "#",
     },
     {
-      title: "E-Commerce-Lösung",
+      title: t("project7Title") || "Interne App Stunden",
       description:
-        "Ein Online-Shop für einen lokalen Händler mit Produktkatalog, Zahlungsabwicklung und Bestandsverwaltung.",
+        t("project7Desc") ||
+        "Für die Andermatt Swiss Alps AG durften wir eine Projektstundenerfassung mit Power Apps erstellen. Die App ist gleichzeitig für Backoffice und Aussendienst geeignet und wurde direkt in MS Teams integriert.",
       imageUrl:
-        "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
-      category: "Marketing",
+        "https://images.unsplash.com/photo-1611224885990-ab7363d1f2a9?w=800&q=80",
+      category: "PowerApps",
       link: "#",
     },
     {
-      title: "Inventar-App",
+      title: t("project8Title") || "Customizing Website Beautysalon",
       description:
-        "Eine mobile Anwendung zur Bestandsverwaltung mit Barcode-Scanning und Echtzeit-Synchronisation.",
+        t("project8Desc") ||
+        "Die Schmidlin & Suter Media GmbH hat uns nochmals gebeten bei diversen Anpassungen zu helfen. Diesmal ging es um einen Refresh einer bestehenden Seite für die Art-Esthetic Beautysalons.",
       imageUrl:
-        "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&q=80",
-      category: "Audio",
-      link: "#",
+        "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+      category: "Website",
+      link: "https://art-esthetic.ch",
     },
     {
-      title: "Workflow-Automatisierung",
+      title: t("project9Title") || "Dashboard Marketing",
       description:
-        "Eine Automatisierungslösung für einen Fertigungsbetrieb, die Bestellprozesse optimiert und Fehler reduziert.",
+        t("project9Desc") ||
+        "Die Schmidlin & Suter Media GmbH benötigte für ihre Kunden einen Report der Marketing-Kampagnen. Wir haben einen Datenfluss samt Dashboard erstellt, der mit Facebook-Daten befüllt wird.",
       imageUrl:
-        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
-      category: "Commercial",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      category: "Dashboard",
       link: "#",
     },
   ];
@@ -205,7 +241,7 @@ const ProjectsPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              {t("ourProjects") || "Our Projects"}
+              {t("ourProjects") || "Unsere Projekte"}
             </motion.h1>
             <motion.p
               className={cn(
@@ -217,7 +253,7 @@ const ProjectsPage = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               {t("projectsDescription") ||
-                "Explore our portfolio of successful projects across various industries and technologies."}
+                "Entdecken Sie unsere erfolgreichen Projekte in verschiedenen Branchen und mit unterschiedlichen Technologien."}
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}
@@ -235,7 +271,8 @@ const ProjectsPage = () => {
                 )}
               >
                 <a href="/" className="flex items-center gap-1">
-                  <ArrowLeft size={14} /> {t("backToHome") || "Back to Home"}
+                  <ArrowLeft size={14} />{" "}
+                  {t("backToHome") || "Zurück zur Startseite"}
                 </a>
               </Button>
             </motion.div>

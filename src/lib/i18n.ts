@@ -11,7 +11,8 @@ export const translations: Translations = {
     // Navbar
     about: "About",
     services: "Services",
-    portfolio: "Portfolio",
+    projects: "Projects",
+    projectsPage: "All Projects",
     contact: "Contact",
     getStarted: "Get Started",
 
@@ -63,12 +64,15 @@ export const translations: Translations = {
     storytellingDesc:
       "Custom Microsoft Office and productivity tool enhancements for improved efficiency.",
 
-    // Portfolio Section
-    portfolioTitle: "Our Portfolio",
-    portfolioSubtitle:
+    // Projects Section
+    projectsTitle: "Our Projects",
+    projectsSubtitle:
       "Explore our diverse collection of low-code/no-code projects across various industries.",
     viewProject: "View Project",
     viewAllProjects: "View All Projects",
+    exploreOurProjects: "Explore Our Complete Projects Collection",
+    projectsCTAText:
+      "Discover our full range of projects and see how we've helped businesses transform their digital presence.",
     corporate: "Corporate",
     screenplay: "Web Apps",
     educational: "Education",
@@ -76,6 +80,52 @@ export const translations: Translations = {
     audio: "Mobile",
     commercial: "Automation",
     all: "All",
+    integration: "Integration",
+    automation: "Automation",
+    powerapps: "Power Apps",
+    website: "Website",
+    dashboard: "Dashboard",
+    ourProjects: "Our Projects",
+    projectsDescription:
+      "Discover our successful projects across various industries and technologies.",
+    backToHome: "Back to Home",
+
+    // Project Descriptions
+    project1Title: "Booking System Integration",
+    project1Desc:
+      "Schmidlin & Suter Media GmbH commissioned us to integrate a booking system into their latest website. Our main goal was to ensure that the end customer is not disturbed by the integration and that the flow of the website remains smooth.",
+
+    project2Title: "Motivation Letter Automation",
+    project2Desc:
+      "Pflegejob Suisse Medical helps nursing professionals find jobs with their service. We were able to develop the cloud process that automatically creates a perfectly written motivation letter from the applicant's data using AI.",
+
+    project3Title: "Internal App Projects",
+    project3Desc:
+      "For TCA Thermoclima AG, we were able to develop a new version of their existing Power App. This had to be responsive above all, so that the back office and sales could work with the same app.",
+
+    project4Title: "Laboratory Input Form",
+    project4Desc:
+      "For the laboratory at Swisspor AG, we were able to create several input forms with Power Apps. Monthly data migrations are eliminated, fewer errors occur during recording, and evaluations can be read out at any time.",
+
+    project5Title: "Customizing Spitex Website",
+    project5Desc:
+      "For Schmidlin & Suter Media GmbH, we were able to take over various adjustments to the new website for pflegezuhause.zuerich.",
+
+    project6Title: "Registration Automation",
+    project6Desc:
+      "For Bergsportschule Grischa, we were able to integrate an automation that writes emails from course registrations into an Excel file or creates a new file if one doesn't exist for this course yet.",
+
+    project7Title: "Internal Hours App",
+    project7Desc:
+      "For Andermatt Swiss Alps AG, we were able to create a project time recording system with Power Apps. The app is suitable for both back office and field service and was integrated directly into MS Teams.",
+
+    project8Title: "Customizing Beauty Salon Website",
+    project8Desc:
+      "Schmidlin & Suter Media GmbH asked us again to help with various adjustments. This time it was about refreshing an existing page for the Art-Esthetic Beauty Salons.",
+
+    project9Title: "Marketing Dashboard",
+    project9Desc:
+      "Schmidlin & Suter Media GmbH needed a report of marketing campaigns for their customers. We created a data flow including a dashboard that is filled with Facebook data.",
 
     // Contact Section
     contactTitle: "Get in Touch",
@@ -111,7 +161,8 @@ export const translations: Translations = {
     // Navbar
     about: "Über uns",
     services: "Dienstleistungen",
-    portfolio: "Portfolio",
+    projects: "Projekte",
+    projectsPage: "Alle Projekte",
     contact: "Kontakt",
     getStarted: "Jetzt starten",
 
@@ -163,12 +214,15 @@ export const translations: Translations = {
     storytellingDesc:
       "Individuelle Microsoft Office und Produktivitätstool-Erweiterungen für verbesserte Effizienz.",
 
-    // Portfolio Section
-    portfolioTitle: "Unser Portfolio",
-    portfolioSubtitle:
+    // Projects Section
+    projectsTitle: "Unsere Projekte",
+    projectsSubtitle:
       "Entdecken Sie unsere vielfältige Sammlung von Low-Code/No-Code-Projekten in verschiedenen Branchen.",
     viewProject: "Projekt ansehen",
     viewAllProjects: "Alle Projekte ansehen",
+    exploreOurProjects: "Entdecken Sie unsere komplette Projektsammlung",
+    projectsCTAText:
+      "Entdecken Sie unsere gesamte Projektpalette und sehen Sie, wie wir Unternehmen bei der Transformation ihrer digitalen Präsenz geholfen haben.",
     corporate: "Unternehmen",
     screenplay: "Web-Apps",
     educational: "Bildung",
@@ -176,6 +230,52 @@ export const translations: Translations = {
     audio: "Mobile",
     commercial: "Automatisierung",
     all: "Alle",
+    integration: "Integration",
+    automation: "Automatisierung",
+    powerapps: "Power Apps",
+    website: "Website",
+    dashboard: "Dashboard",
+    ourProjects: "Unsere Projekte",
+    projectsDescription:
+      "Entdecken Sie unsere erfolgreichen Projekte in verschiedenen Branchen und mit unterschiedlichen Technologien.",
+    backToHome: "Zurück zur Startseite",
+
+    // Project Descriptions
+    project1Title: "Integration Buchungssystem",
+    project1Desc:
+      "Die Schmidlin & Suter Media GmbH hat uns beauftragt bei ihrer neuesten Website ein Buchungssystem zu integrieren. Unser Ziel war vor allem, dass der Endkunde durch die Integration nicht gestört wird und der Fluss der Website stimmt.",
+
+    project2Title: "Automatisierung Motivationsschreiben",
+    project2Desc:
+      "Die Pflegejob Suisse Medical verhilft mit ihrem Service Pflegefachkräften zu Jobs. Wir durften den Cloudprozess entwickeln, der aus den Daten des Bewerbers automatisch mit AI ein perfekt geschriebenes Motivationsschreiben erstellt.",
+
+    project3Title: "Interne App Projekte",
+    project3Desc:
+      "Für die TCA Thermoclima AG durften wir eine neue Version ihrer bestehenden Power App entwickeln. Diese musste vor allem responsiv sein, damit das Backoffice und der Verkauf mit der gleichen App arbeiten können.",
+
+    project4Title: "Eingabemaske Labor",
+    project4Desc:
+      "Für das Labor bei der Swisspor AG durften wir mehrere Eingabemasken mit Power Apps erstellen. Monatliche Datenmigrationen entfallen, es entstehen weniger Fehler bei der Erfassung und Auswertungen können jederzeit ausgelesen werden.",
+
+    project5Title: "Customizing Website Spitex",
+    project5Desc:
+      "Für die Schmidlin & Suter Media GmbH durften wir diverse Anpassungen an der neuen Website für pflegezuhause.zuerich übernehmen.",
+
+    project6Title: "Automatisierung Anmeldung",
+    project6Desc:
+      "Für die Bergsportschule Grischa durften wir eine Automatisierung integrieren, die Mails von Kursanmeldungen in eine Excel-Datei schreibt bzw. eine neue Datei erstellt, falls es für diesen Kurs noch keine gibt.",
+
+    project7Title: "Interne App Stunden",
+    project7Desc:
+      "Für die Andermatt Swiss Alps AG durften wir eine Projektstundenerfassung mit Power Apps erstellen. Die App ist gleichzeitig für Backoffice und Aussendienst geeignet und wurde direkt in MS Teams integriert.",
+
+    project8Title: "Customizing Website Beautysalon",
+    project8Desc:
+      "Die Schmidlin & Suter Media GmbH hat uns nochmals gebeten bei diversen Anpassungen zu helfen. Diesmal ging es um einen Refresh einer bestehenden Seite für die Art-Esthetic Beautysalons.",
+
+    project9Title: "Dashboard Marketing",
+    project9Desc:
+      "Die Schmidlin & Suter Media GmbH benötigte für ihre Kunden einen Report der Marketing-Kampagnen. Wir haben einen Datenfluss samt Dashboard erstellt, der mit Facebook-Daten befüllt wird.",
 
     // Contact Section
     contactTitle: "Kontaktieren Sie uns",
@@ -212,7 +312,8 @@ export const translations: Translations = {
     // Navbar
     about: "À propos",
     services: "Services",
-    portfolio: "Portfolio",
+    projects: "Projets",
+    projectsPage: "Tous les projets",
     contact: "Contact",
     getStarted: "Commencer",
 
@@ -264,12 +365,15 @@ export const translations: Translations = {
     storytellingDesc:
       "Améliorations personnalisées de Microsoft Office et des outils de productivité pour une meilleure efficacité.",
 
-    // Portfolio Section
-    portfolioTitle: "Notre portfolio",
-    portfolioSubtitle:
+    // Projects Section
+    projectsTitle: "Nos projets",
+    projectsSubtitle:
       "Explorez notre collection diversifiée de projets low-code/no-code dans différents secteurs.",
     viewProject: "Voir le projet",
     viewAllProjects: "Voir tous les projets",
+    exploreOurProjects: "Explorez notre collection complète de projets",
+    projectsCTAText:
+      "Découvrez notre gamme complète de projets et voyez comment nous avons aidé les entreprises à transformer leur présence numérique.",
     corporate: "Entreprise",
     screenplay: "Applications web",
     educational: "Éducation",
@@ -277,6 +381,52 @@ export const translations: Translations = {
     audio: "Mobile",
     commercial: "Automatisation",
     all: "Tous",
+    integration: "Intégration",
+    automation: "Automatisation",
+    powerapps: "Power Apps",
+    website: "Site web",
+    dashboard: "Tableau de bord",
+    ourProjects: "Nos Projets",
+    projectsDescription:
+      "Découvrez nos projets réussis dans différents secteurs et avec différentes technologies.",
+    backToHome: "Retour à l'accueil",
+
+    // Project Descriptions
+    project1Title: "Intégration de système de réservation",
+    project1Desc:
+      "Schmidlin & Suter Media GmbH nous a chargés d'intégrer un système de réservation dans leur dernier site web. Notre objectif principal était de s'assurer que le client final ne soit pas perturbé par l'intégration et que le flux du site web reste fluide.",
+
+    project2Title: "Automatisation de lettre de motivation",
+    project2Desc:
+      "Pflegejob Suisse Medical aide les professionnels des soins infirmiers à trouver des emplois grâce à leur service. Nous avons pu développer le processus cloud qui crée automatiquement une lettre de motivation parfaitement rédigée à partir des données du candidat en utilisant l'IA.",
+
+    project3Title: "Projets d'applications internes",
+    project3Desc:
+      "Pour TCA Thermoclima AG, nous avons pu développer une nouvelle version de leur Power App existante. Celle-ci devait être responsive avant tout, afin que le back-office et les ventes puissent travailler avec la même application.",
+
+    project4Title: "Formulaire de saisie de laboratoire",
+    project4Desc:
+      "Pour le laboratoire de Swisspor AG, nous avons pu créer plusieurs formulaires de saisie avec Power Apps. Les migrations de données mensuelles sont éliminées, moins d'erreurs se produisent lors de l'enregistrement, et les évaluations peuvent être consultées à tout moment.",
+
+    project5Title: "Personnalisation du site web Spitex",
+    project5Desc:
+      "Pour Schmidlin & Suter Media GmbH, nous avons pu prendre en charge diverses adaptations du nouveau site web pour pflegezuhause.zuerich.",
+
+    project6Title: "Automatisation des inscriptions",
+    project6Desc:
+      "Pour Bergsportschule Grischa, nous avons pu intégrer une automatisation qui écrit les emails d'inscriptions aux cours dans un fichier Excel ou crée un nouveau fichier s'il n'en existe pas encore pour ce cours.",
+
+    project7Title: "Application interne de suivi des heures",
+    project7Desc:
+      "Pour Andermatt Swiss Alps AG, nous avons pu créer un système d'enregistrement du temps de projet avec Power Apps. L'application convient à la fois au back-office et au service extérieur et a été intégrée directement dans MS Teams.",
+
+    project8Title: "Personnalisation du site web de salon de beauté",
+    project8Desc:
+      "Schmidlin & Suter Media GmbH nous a demandé à nouveau d'aider à diverses adaptations. Cette fois, il s'agissait de rafraîchir une page existante pour les salons de beauté Art-Esthetic.",
+
+    project9Title: "Tableau de bord marketing",
+    project9Desc:
+      "Schmidlin & Suter Media GmbH avait besoin d'un rapport des campagnes marketing pour leurs clients. Nous avons créé un flux de données comprenant un tableau de bord qui est rempli avec des données Facebook.",
 
     // Contact Section
     contactTitle: "Contactez-nous",
@@ -313,7 +463,8 @@ export const translations: Translations = {
     // Navbar
     about: "Chi siamo",
     services: "Servizi",
-    portfolio: "Portfolio",
+    projects: "Progetti",
+    projectsPage: "Tutti i progetti",
     contact: "Contatti",
     getStarted: "Inizia ora",
 
@@ -365,12 +516,15 @@ export const translations: Translations = {
     storytellingDesc:
       "Miglioramenti personalizzati di Microsoft Office e strumenti di produttività per una maggiore efficienza.",
 
-    // Portfolio Section
-    portfolioTitle: "Il nostro portfolio",
-    portfolioSubtitle:
+    // Projects Section
+    projectsTitle: "I nostri progetti",
+    projectsSubtitle:
       "Esplora la nostra variegata collezione di progetti low-code/no-code in vari settori.",
     viewProject: "Visualizza progetto",
     viewAllProjects: "Visualizza tutti i progetti",
+    exploreOurProjects: "Esplora la nostra collezione completa di progetti",
+    projectsCTAText:
+      "Scopri la nostra gamma completa di progetti e vedi come abbiamo aiutato le aziende a trasformare la loro presenza digitale.",
     corporate: "Aziendale",
     screenplay: "App web",
     educational: "Educazione",
@@ -378,6 +532,52 @@ export const translations: Translations = {
     audio: "Mobile",
     commercial: "Automazione",
     all: "Tutti",
+    integration: "Integrazione",
+    automation: "Automazione",
+    powerapps: "Power Apps",
+    website: "Sito web",
+    dashboard: "Dashboard",
+    ourProjects: "I nostri progetti",
+    projectsDescription:
+      "Scopri i nostri progetti di successo in vari settori e con diverse tecnologie.",
+    backToHome: "Torna alla home",
+
+    // Project Descriptions
+    project1Title: "Integrazione sistema di prenotazione",
+    project1Desc:
+      "Schmidlin & Suter Media GmbH ci ha incaricato di integrare un sistema di prenotazione nel loro ultimo sito web. Il nostro obiettivo principale era garantire che il cliente finale non fosse disturbato dall'integrazione e che il flusso del sito web rimanesse fluido.",
+
+    project2Title: "Automazione lettera motivazionale",
+    project2Desc:
+      "Pflegejob Suisse Medical aiuta i professionisti infermieristici a trovare lavoro con il loro servizio. Abbiamo potuto sviluppare il processo cloud che crea automaticamente una lettera motivazionale perfettamente scritta dai dati del candidato utilizzando l'AI.",
+
+    project3Title: "Progetti app interne",
+    project3Desc:
+      "Per TCA Thermoclima AG, abbiamo potuto sviluppare una nuova versione della loro Power App esistente. Questa doveva essere soprattutto responsive, in modo che il back office e le vendite potessero lavorare con la stessa app.",
+
+    project4Title: "Modulo di input laboratorio",
+    project4Desc:
+      "Per il laboratorio di Swisspor AG, abbiamo potuto creare diversi moduli di input con Power Apps. Le migrazioni mensili dei dati sono eliminate, si verificano meno errori durante la registrazione e le valutazioni possono essere lette in qualsiasi momento.",
+
+    project5Title: "Personalizzazione sito web Spitex",
+    project5Desc:
+      "Per Schmidlin & Suter Media GmbH, abbiamo potuto assumere vari adattamenti al nuovo sito web per pflegezuhause.zuerich.",
+
+    project6Title: "Automazione registrazione",
+    project6Desc:
+      "Per Bergsportschule Grischa, abbiamo potuto integrare un'automazione che scrive le email dalle registrazioni ai corsi in un file Excel o crea un nuovo file se non ne esiste ancora uno per questo corso.",
+
+    project7Title: "App interna ore",
+    project7Desc:
+      "Per Andermatt Swiss Alps AG, abbiamo potuto creare un sistema di registrazione del tempo di progetto con Power Apps. L'app è adatta sia per il back office che per il servizio esterno ed è stata integrata direttamente in MS Teams.",
+
+    project8Title: "Personalizzazione sito web salone di bellezza",
+    project8Desc:
+      "Schmidlin & Suter Media GmbH ci ha chiesto nuovamente di aiutare con vari adattamenti. Questa volta si trattava di rinnovare una pagina esistente per i saloni di bellezza Art-Esthetic.",
+
+    project9Title: "Dashboard marketing",
+    project9Desc:
+      "Schmidlin & Suter Media GmbH aveva bisogno di un report delle campagne di marketing per i loro clienti. Abbiamo creato un flusso di dati incluso un dashboard che viene riempito con dati Facebook.",
 
     // Contact Section
     contactTitle: "Contattaci",

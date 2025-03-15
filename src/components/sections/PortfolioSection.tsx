@@ -113,7 +113,7 @@ const PortfolioSection = ({}: PortfolioSectionProps) => {
 
   return (
     <section
-      id="portfolio"
+      id="projects"
       className={cn(
         "py-20 w-full",
         theme === "dark" ? "bg-gray-900" : "bg-gray-50",
@@ -133,7 +133,7 @@ const PortfolioSection = ({}: PortfolioSectionProps) => {
               theme === "dark" ? "text-gray-100" : "text-gray-900",
             )}
           >
-            {t("portfolioTitle")}
+            {t("projectsTitle")}
           </h2>
           <p
             className={cn(
@@ -141,7 +141,7 @@ const PortfolioSection = ({}: PortfolioSectionProps) => {
               theme === "dark" ? "text-gray-300" : "text-gray-600",
             )}
           >
-            {t("portfolioSubtitle")}
+            {t("projectsSubtitle")}
           </p>
         </motion.div>
 
@@ -152,38 +152,37 @@ const PortfolioSection = ({}: PortfolioSectionProps) => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className={cn(
-              "max-w-3xl p-8 rounded-xl text-center",
+              "max-w-4xl p-10 rounded-xl text-center",
               theme === "dark" ? "bg-gray-800" : "bg-white shadow-xl",
             )}
           >
             <h3
               className={cn(
-                "text-2xl md:text-3xl font-bold mb-4",
+                "text-3xl md:text-4xl font-bold mb-6",
                 theme === "dark" ? "text-white" : "text-gray-900",
               )}
             >
-              {t("exploreOurProjects") || "Explore Our Complete Portfolio"}
+              {t("exploreOurProjects")}
             </h3>
             <p
               className={cn(
-                "mb-6 text-lg",
+                "mb-8 text-xl max-w-2xl mx-auto",
                 theme === "dark" ? "text-gray-300" : "text-gray-600",
               )}
             >
-              {t("portfolioCTAText") ||
-                "Discover our full range of projects and see how we've helped businesses transform their digital presence."}
+              {t("projectsCTAText")}
             </p>
             <Button
               asChild
               size="lg"
               className={cn(
-                "group text-lg px-8 py-6",
+                "group text-xl px-10 py-7 rounded-full",
                 theme === "dark" ? "bg-red-600 hover:bg-red-700" : "",
               )}
             >
               <Link to="/projects" className="flex items-center">
-                {t("viewAllProjects") || "View All Projects"}
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                {t("viewAllProjects")}
+                <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </motion.div>
